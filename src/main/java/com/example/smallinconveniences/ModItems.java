@@ -12,7 +12,8 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class ModItems {
-    public static  Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+    // Creates a new item and registers it to the game.
+    public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Smallinconveniences.MOD_ID, name));
 
         Item item = itemFactory.apply(settings.registryKey(itemKey));
