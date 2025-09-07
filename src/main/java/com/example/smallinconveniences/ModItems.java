@@ -23,6 +23,10 @@ public class ModItems {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.add(ModItems.TEST_ITEM));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+                .register((itemGroup) -> itemGroup.add(ModItems.STEEL_INGOT));
     }
     public static final Item TEST_ITEM = register("test_item", Item::new, new Item.Settings());
+    public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Settings());
+
 }
