@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "smallinconveniences:steel"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "smallinconveniences:steel"
+      }
+    ]
+  }
+}
