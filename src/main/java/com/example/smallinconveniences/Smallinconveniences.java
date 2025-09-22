@@ -18,25 +18,28 @@ public class Smallinconveniences implements ModInitializer {
     public void onInitialize() {
         ModItems.initialize();
         ModBlocks.initialize();
+
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
-                float speedDecrease = -(float) (player.getArmor() / 600.0); // Base speed is 0.1, 33% decrease at max armor
+                float speedDecrease = -(float) (player.getArmor() / 1000.0); // Base speed is 0.1, 20% decrease at max armor
                 if (speedDecrease < 0) {
                     EntityAttributeInstance playerSpeed = player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED);
 
-                    if (playerSpeed.getModifier(ARMOR_SPEED_PENALTY_ID) != null) {
-                        playerSpeed.removeModifier(ARMOR_SPEED_PENALTY_ID);
+                    if (playerSpeed != null) {
+                        if (playerSpeed.getModifier(ARMOR_SPEED_PENALTY_ID) != null) {
+                            playerSpeed.removeModifier(ARMOR_SPEED_PENALTY_ID);
+                        }
+                        EntityAttributeModifier speedModifier = new EntityAttributeModifier(
+                                ARMOR_SPEED_PENALTY_ID,
+                                speedDecrease,
+                                EntityAttributeModifier.Operation.ADD_VALUE
+                        );
+                        playerSpeed.addPersistentModifier(speedModifier);
+                        // System.out.println(speedDecrease);
                     }
-                    EntityAttributeModifier speedModifier = new EntityAttributeModifier(
-                            ARMOR_SPEED_PENALTY_ID,
-                            speedDecrease,
-                            EntityAttributeModifier.Operation.ADD_VALUE
-                    );
-                    playerSpeed.addPersistentModifier(speedModifier);
-                    System.out.println(speedDecrease);
-
                 }
             }
         });
+
     }
 }

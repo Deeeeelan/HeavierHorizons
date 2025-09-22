@@ -1,5 +1,9 @@
 {
   "item.smallinconveniences.test_item": "Test Item",
   "item.smallinconveniences.steel_ingot": "Steel Ingot",
-  "item.smallinconveniences.steel_block": "Steel Block"
+  "item.smallinconveniences.steel_block": "Steel Block",
+  "item.smallinconveniences.steel_helmet": "Steel Helmet",
+  "item.smallinconveniences.steel_chestplate": "Steel Chestplate",
+  "item.smallinconveniences.steel_leggings": "Steel Leggings",
+  "item.smallinconveniences.steel_boots": "Steel Boots"
 }
