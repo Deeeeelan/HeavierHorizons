@@ -1,5 +1,6 @@
 package com.example.smallinconveniences;
 
+import net.fabricmc.fabric.mixin.message.PlayerManagerMixin;
 import net.minecraft.util.Identifier;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -21,6 +22,8 @@ public class Smallinconveniences implements ModInitializer {
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+
+                // Decreases player speed based on armor
                 float speedDecrease = -(float) (player.getArmor() / 1000.0); // Base speed is 0.1, 20% decrease at max armor
                 if (speedDecrease < 0) {
                     EntityAttributeInstance playerSpeed = player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED);
@@ -35,7 +38,6 @@ public class Smallinconveniences implements ModInitializer {
                                 EntityAttributeModifier.Operation.ADD_VALUE
                         );
                         playerSpeed.addPersistentModifier(speedModifier);
-                        // System.out.println(speedDecrease);
                     }
                 }
             }

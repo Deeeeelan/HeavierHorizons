@@ -28,6 +28,7 @@ public class SmallInconveniencesRecipeProvider extends FabricRecipeProvider {
     protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup, RecipeExporter exporter) {
         return new RecipeGenerator(registryLookup, exporter) {
 
+            // Creates a shaped recipe that only consists of one item
             private void createMonoItemRecipe(RecipeExporter exporter, RecipeCategory category, ItemConvertible output,
                                               int quantity, ItemConvertible input, String[] pattern, String name) {
                 createShaped(category, output, quantity)
