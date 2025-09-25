@@ -1,6 +1,9 @@
 package com.example.smallinconveniences;
 
+import com.example.smallinconveniences.armor.SteelArmorMaterial;
 import net.fabricmc.fabric.mixin.message.PlayerManagerMixin;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -14,6 +17,15 @@ public class Smallinconveniences implements ModInitializer {
     public static final String MOD_ID = "smallinconveniences";
 
     private static final Identifier ARMOR_SPEED_PENALTY_ID = Identifier.of(Smallinconveniences.MOD_ID, "armor_speed_penalty");
+
+    public static final ToolMaterial STEEL_TOOL_MATERIAL = new ToolMaterial(
+            BlockTags.INCORRECT_FOR_WOODEN_TOOL,
+            455,
+            5.0F,
+            1.5F,
+            22,
+            SteelArmorMaterial.REPAIRS_STEEL_ARMOR
+    );
 
     @Override
     public void onInitialize() {

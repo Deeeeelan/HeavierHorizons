@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "smallinconveniences:item/steel_sword"
+  }
+}

@@ -13,6 +13,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
+import static com.example.smallinconveniences.Smallinconveniences.STEEL_TOOL_MATERIAL;
+
 public class ModItems {
     // Creates a new item and registers it to the game.
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
@@ -23,6 +25,7 @@ public class ModItems {
 
         return item;
     }
+
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
             .register((itemGroup) -> {
@@ -36,10 +39,26 @@ public class ModItems {
                     itemGroup.add(ModItems.STEEL_LEGGINGS);
                     itemGroup.add(ModItems.STEEL_BOOTS);
                 });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+                .register((itemGroup) -> {
+                    itemGroup.add(ModItems.STEEL_SWORD);
+                });
 
     }
+
     public static final Item TEST_ITEM = register("test_item", Item::new, new Item.Settings());
+
+    // Steel Set
     public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Settings());
+
+
+    public static final Item STEEL_SWORD = register(
+            "steel_sword",
+            Item::new,
+            new Item.Settings()
+                    .sword(STEEL_TOOL_MATERIAL, 10.5f, -2.8f)
+                    .repairable(ModItems.STEEL_INGOT)
+    );
 
     public static final Item STEEL_HELMET = register(
             "steel_helmet",
@@ -47,6 +66,7 @@ public class ModItems {
             new Item.Settings().armor(SteelArmorMaterial.INSTANCE, EquipmentType.HELMET)
                     .maxDamage(EquipmentType.HELMET.getMaxDamage(SteelArmorMaterial.BASE_DURABILITY))
     );
+
     public static final Item STEEL_CHESTPLATE = register("steel_chestplate",
             Item::new,
             new Item.Settings().armor(SteelArmorMaterial.INSTANCE, EquipmentType.CHESTPLATE)
