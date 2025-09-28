@@ -46,6 +46,10 @@ public class ModBlocks {
                 .register((itemGroup) -> {
                     itemGroup.add(ModBlocks.STEEL_BLOCK.asItem());
                 });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
+                .register((itemGroup) -> {
+                    itemGroup.add(ModBlocks.STEEL_MILL.asItem());
+                });
     }
 
     public static final Block STEEL_BLOCK = register(
@@ -55,5 +59,14 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.IRON)
                     .requiresTool()
                     .strength(5.0f, 6.0f),
+            true);
+
+    public static final Block STEEL_MILL = register(
+            "steel_mill",
+            Block::new,
+            AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.IRON)
+                    .requiresTool()
+                    .strength(6.0f, 7.0f),
             true);
 }

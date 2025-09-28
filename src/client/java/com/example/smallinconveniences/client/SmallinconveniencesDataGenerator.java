@@ -10,5 +10,6 @@ public class SmallinconveniencesDataGenerator implements DataGeneratorEntrypoint
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(SmallInconveniencesRecipeProvider::new);
+        pack.addProvider(SmallInconveniencesModelProvider::new);
     }
 }

@@ -48,6 +48,8 @@ public class ModItems {
 
     public static final Item TEST_ITEM = register("test_item", Item::new, new Item.Settings());
 
+    public static final Item COAL_DUST = register("coal_dust", Item::new, new Item.Settings());
+
     // Steel Set
     public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Settings());
 

@@ -1,6 +1,7 @@
 package com.example.smallinconveniences;
 
 import com.example.smallinconveniences.armor.SteelArmorMaterial;
+import com.example.smallinconveniences.block.entity.ModBlockEntities;
 import net.fabricmc.fabric.mixin.message.PlayerManagerMixin;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.tag.BlockTags;
@@ -31,6 +32,7 @@ public class Smallinconveniences implements ModInitializer {
     public void onInitialize() {
         ModItems.initialize();
         ModBlocks.initialize();
+        ModBlockEntities.initialize();
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
