@@ -10,6 +10,7 @@ import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -28,7 +29,7 @@ public class SmallInconveniencesRecipeProvider extends FabricRecipeProvider {
 
             // Creates a shaped recipe that only consists of one item
             private void createMonoItemRecipe(RecipeExporter exporter, RecipeCategory category, ItemConvertible output,
-                                              int quantity, ItemConvertible input, String[] pattern, String name) {
+                                              int quantity, ItemConvertible input, String[] pattern) {
                 createShaped(category, output, quantity)
                         .pattern(pattern[0])
                         .pattern(pattern.length > 1 ? pattern[1] : "   ")
@@ -39,24 +40,32 @@ public class SmallInconveniencesRecipeProvider extends FabricRecipeProvider {
 
             }
 
+            private void ShapelessRecipe(RecipeExporter exporter, RecipeCategory category, ItemConvertible output,
+                                         int outputQualtity, ItemConvertible input, int inputQuantity) {
+                createShapeless(category, output, outputQualtity)
+                        .input(input, inputQuantity)
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .offerTo(exporter);
+            }
 
             @Override
             public void generate() {
 
-
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_BLOCK.asItem())
-                        .input(ModItems.STEEL_INGOT, 9)
-                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
-                        .offerTo(exporter);
+                ShapelessRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_BLOCK.asItem(),
+                        1, ModItems.STEEL_INGOT, 9);
+                ShapelessRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_INGOT,
+                        9, ModBlocks.STEEL_BLOCK.asItem(), 1);
+                ShapelessRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.COAL_DUST,
+                        2, Items.COAL, 1);
 
                 createMonoItemRecipe(exporter, RecipeCategory.COMBAT, ModItems.STEEL_HELMET, 1,
-                        ModItems.STEEL_INGOT, new String[]{"SSS", "S S"}, "steel_helmet");
+                        ModItems.STEEL_INGOT, new String[]{"SSS", "S S"});
                 createMonoItemRecipe(exporter, RecipeCategory.COMBAT, ModItems.STEEL_CHESTPLATE, 1,
-                        ModItems.STEEL_INGOT, new String[]{"S S", "SSS", "SSS"}, "steel_chestplate");
+                        ModItems.STEEL_INGOT, new String[]{"S S", "SSS", "SSS"});
                 createMonoItemRecipe(exporter, RecipeCategory.COMBAT, ModItems.STEEL_LEGGINGS, 1,
-                        ModItems.STEEL_INGOT, new String[]{"SSS", "S S", "S S"}, "steel_leggings");
+                        ModItems.STEEL_INGOT, new String[]{"SSS", "S S", "S S"});
                 createMonoItemRecipe(exporter, RecipeCategory.COMBAT, ModItems.STEEL_BOOTS, 1,
-                        ModItems.STEEL_INGOT, new String[]{"S S", "S S"}, "steel_boots");
+                        ModItems.STEEL_INGOT, new String[]{"S S", "S S"});
 
 
                 RegistryWrapper.Impl<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
