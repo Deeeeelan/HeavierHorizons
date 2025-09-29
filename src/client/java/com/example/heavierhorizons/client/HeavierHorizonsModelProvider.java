@@ -14,7 +14,7 @@ public class HeavierHorizonsModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STEEL_MILL);
+        // blockStateModelGenerator.registerMultifaceBlock(ModBlocks.STEEL_MILL);
     }
 
 
