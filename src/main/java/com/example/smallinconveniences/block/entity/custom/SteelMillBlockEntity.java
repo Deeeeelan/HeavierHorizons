@@ -92,18 +92,21 @@ public class SteelMillBlockEntity extends BlockEntity implements ExtendedScreenH
 
 	@Override
 	protected void writeData(WriteView view) {
-		super.writeData(view);
+        super.writeData(view);
 
-		view.putInt("steel_mill.progress", progress);
+        Inventories.writeData(view, inventory);
+        view.putInt("steel_mill.progress", progress);
 		view.putInt("steel_mill.max_progress", maxProgress);
-	}
+    }
 
 	@Override
 	protected void readData(ReadView view) {
 		super.readData(view);
+        Inventories.readData(view, inventory);
 		progress = view.getInt("steel_mill.progress",0 );
 		maxProgress = view.getInt("steel_mill.max_progress", 0);
-	}
+
+    }
 
 	public void tick(World world, BlockPos pos, BlockState state) {
 		if(hasRecipe()) {
