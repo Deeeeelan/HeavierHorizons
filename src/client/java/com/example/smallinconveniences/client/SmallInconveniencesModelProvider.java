@@ -21,6 +21,7 @@ public class SmallInconveniencesModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.COAL_DUST);
+        itemModelGenerator.register(ModItems.FORGE_PICKAXE);
     }
 
     @Override

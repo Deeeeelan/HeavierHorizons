@@ -24,7 +24,7 @@ public class Smallinconveniences implements ModInitializer {
             455,
             5.0F,
             1.5F,
-            22,
+            16,
             SteelArmorMaterial.REPAIRS_STEEL_ARMOR
     );
 

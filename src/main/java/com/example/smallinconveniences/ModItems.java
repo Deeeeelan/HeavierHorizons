@@ -1,9 +1,12 @@
 package com.example.smallinconveniences;
 
 import com.example.smallinconveniences.armor.SteelArmorMaterial;
+import com.example.smallinconveniences.item.ForgePickaxeItem;
+import com.jcraft.jorbis.Block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,6 +24,13 @@ public class ModItems {
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Smallinconveniences.MOD_ID, name));
 
         Item item = itemFactory.apply(settings.registryKey(itemKey));
+        Registry.register(Registries.ITEM, itemKey, item);
+
+        return item;
+    }
+    public static Item register2(String name, Item item) {
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Smallinconveniences.MOD_ID, name));
+
         Registry.register(Registries.ITEM, itemKey, item);
 
         return item;
@@ -43,6 +53,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
                 .register((itemGroup) -> {
                     itemGroup.add(ModItems.STEEL_SWORD);
+                    itemGroup.add(ModItems.FORGE_PICKAXE);
                 });
 
     }
@@ -61,6 +72,15 @@ public class ModItems {
             new Item.Settings()
                     .sword(STEEL_TOOL_MATERIAL, 10.5f, -2.8f)
                     .repairable(ModItems.STEEL_INGOT)
+    );
+    public static final Item FORGE_PICKAXE = register2(
+            "forge_pickaxe",
+            new ForgePickaxeItem(new Item.Settings()
+                    .pickaxe(ToolMaterial.IRON, 1, -2.8f)
+                    .repairable(ModItems.STEEL_INGOT)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Smallinconveniences.MOD_ID, "forge_pickaxe")))
+                    .enchantable(16)
+            )
     );
 
     public static final Item STEEL_HELMET = register(
