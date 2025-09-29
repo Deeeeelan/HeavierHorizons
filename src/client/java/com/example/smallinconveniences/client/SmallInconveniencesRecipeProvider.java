@@ -3,8 +3,6 @@ package com.example.smallinconveniences.client;
 import com.example.smallinconveniences.ModBlocks;
 import com.example.smallinconveniences.ModItems;
 
-import com.example.smallinconveniences.Smallinconveniences;
-import com.nimbusds.oauth2.sdk.id.Identifier;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 

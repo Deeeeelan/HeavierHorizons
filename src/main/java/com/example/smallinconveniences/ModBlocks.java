@@ -1,5 +1,6 @@
 package com.example.smallinconveniences;
 
+import com.example.smallinconveniences.block.custom.SteelMillBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -34,6 +35,18 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, blockKey, block);
     }
 
+    private static Block register2(String name, Block block) {
+        RegistryKey<Block> blockKey = keyOfBlock(name);
+        RegistryKey<Item> itemKey = keyOfItem(name);
+
+        Block registeredBlock = Registry.register(Registries.BLOCK, blockKey, block);
+
+        BlockItem blockItem = new BlockItem(registeredBlock, new Item.Settings().registryKey(itemKey));
+        Registry.register(Registries.ITEM, itemKey, blockItem);
+
+        return registeredBlock;
+    }
+
     private static RegistryKey<Block> keyOfBlock(String name) {
         return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Smallinconveniences.MOD_ID, name));
     }
@@ -60,7 +73,7 @@ public class ModBlocks {
                     .requiresTool()
                     .strength(5.0f, 6.0f),
             true);
-
+    /*
     public static final Block STEEL_MILL = register(
             "steel_mill",
             Block::new,
@@ -69,4 +82,12 @@ public class ModBlocks {
                     .requiresTool()
                     .strength(6.0f, 7.0f),
             true);
+    */
+    public static final Block STEEL_MILL = register2("steel_mill",
+            new SteelMillBlock(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.IRON)
+                    .requiresTool()
+                    .strength(6.0f, 7.0f)
+                    .registryKey(keyOfBlock("steel_mill"))
+    ));
 }
