@@ -31,6 +31,7 @@ public class ModItems {
             .register((itemGroup) -> {
                 itemGroup.add(ModItems.TEST_ITEM);
                 itemGroup.add(ModItems.STEEL_INGOT);
+                itemGroup.add(ModItems.COAL_DUST);
             });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> {
