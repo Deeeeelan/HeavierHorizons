@@ -5,7 +5,6 @@ import com.mojang.serialization.MapCodec;
 import com.example.smallinconveniences.block.ModBlockEntities;
 import com.example.smallinconveniences.block.entity.custom.SteelMillBlockEntity;
 import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;

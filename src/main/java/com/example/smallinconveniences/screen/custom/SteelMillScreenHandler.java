@@ -30,6 +30,8 @@ public class SteelMillScreenHandler extends ScreenHandler {
         this.propertyDelegate = arrayPropertyDelegate;
 
         this.addSlot(new Slot(inventory, 0, 54, 34));
+        this.addSlot(new Slot(inventory, 2, 34, 34));
+        this.addSlot(new Slot(inventory, 3, 77, 57));
         this.addSlot(new Slot(inventory, 1, 104, 34));
 
         addPlayerInventory(playerInventory);

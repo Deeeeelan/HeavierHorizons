@@ -30,14 +30,16 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class SteelMillBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
-	private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
+	private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
-	private static final int INPUT_SLOT = 0;
-	private static final int OUTPUT_SLOT = 1;
+	private static final int INPUT_SLOT = 0; // iron ingot
+    private static final int INPUT_SLOT2 = 2; // coal dust
+    private static final int INPUT_SLOT3 = 3; // coal
+	private static final int OUTPUT_SLOT = 1; // steel ingot
 
 	protected final PropertyDelegate propertyDelegate;
 	private int progress = 0;
-	private int maxProgress = 72;
+	private int maxProgress = 240; // 20ticks/sec = 12 sec
 
 	public SteelMillBlockEntity(BlockPos pos, BlockState state) {
 		super(ModBlockEntities.STEEL_MILL_BE, pos, state);
@@ -109,11 +111,11 @@ public class SteelMillBlockEntity extends BlockEntity implements ExtendedScreenH
     }
 
 	public void tick(World world, BlockPos pos, BlockState state) {
-		if(hasRecipe()) {
+		if (hasRecipe()) {
 			increaseCraftingProgress();
 			markDirty(world, pos, state);
 
-			if(hasCraftingFinished()) {
+			if (hasCraftingFinished()) {
 				craftItem();
 				resetProgress();
 			}
@@ -124,13 +126,15 @@ public class SteelMillBlockEntity extends BlockEntity implements ExtendedScreenH
 
 	private void resetProgress() {
 		this.progress = 0;
-		this.maxProgress = 72;
+		this.maxProgress = 240;
 	}
 
 	private void craftItem() {
 		ItemStack output = new ItemStack(ModItems.STEEL_INGOT, 1);
 
 		this.removeStack(INPUT_SLOT, 1);
+        this.removeStack(INPUT_SLOT2, 1);
+        this.removeStack(INPUT_SLOT3, 1);
 		this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
 				this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
 	}
@@ -145,9 +149,13 @@ public class SteelMillBlockEntity extends BlockEntity implements ExtendedScreenH
 
 	private boolean hasRecipe() {
 		Item input = Items.IRON_INGOT;
-		ItemStack output = new ItemStack(ModItems.STEEL_INGOT, 6);
+        Item input2 = ModItems.COAL_DUST;
+        Item input3 = Items.COAL;
 
-		return this.getStack(INPUT_SLOT).isOf(input) &&
+		ItemStack output = new ItemStack(ModItems.STEEL_INGOT, 1);
+
+		return this.getStack(INPUT_SLOT).isOf(input) && this.getStack(INPUT_SLOT2).isOf(input2) &&
+                this.getStack(INPUT_SLOT3).isOf(input3) &&
 				canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
 	}
 
