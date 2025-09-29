@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "smallinconveniences",
+  "id": "heavierhorizons",
   "version": "${version}",
-  "name": "SmallInconveniences",
+  "name": "HeavierHorizons",
   "description": "",
   "authors": [],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/smallinconveniences/icon.png",
+  "icon": "assets/heavierhorizons/icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "com.example.smallinconveniences.client.SmallinconveniencesDataGenerator"
+      "com.example.heavierhorizons.client.HeavierHorizonsDataGenerator"
     ],
     "client": [
-      "com.example.smallinconveniences.client.SmallinconveniencesClient"
+      "com.example.heavierhorizons.client.HeavierHorizonsClient"
     ],
     "main": [
-      "com.example.smallinconveniences.Smallinconveniences"
+      "com.example.heavierhorizons.HeavierHorizons"
     ]
   },
   "mixins": [
-    "smallinconveniences.mixins.json",
+    "heavierhorizons.mixins.json",
     {
-      "config": "smallinconveniences.client.mixins.json",
+      "config": "heavierhorizons.client.mixins.json",
       "environment": "client"
     }
   ],

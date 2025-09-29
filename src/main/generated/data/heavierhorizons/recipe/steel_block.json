@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot",
+    "heavierhorizons:steel_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "heavierhorizons:steel_block"
+  }
+}
