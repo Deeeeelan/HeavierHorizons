@@ -14,11 +14,8 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-// import net.minecraft.util.ItemActionResult;
-import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -41,26 +38,6 @@ public class SteelMillBlock extends BlockWithEntity implements BlockEntityProvid
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new SteelMillBlockEntity(pos, state);
     }
-
-    @Override
-    protected BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
-    }
-
-    // Drop all items when block is broken
-    /*
-    @Override
-    protected void onStateReplaced(BlockState state, ServerWorld world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof SteelMillBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((SteelMillBlockEntity) blockEntity));
-                world.updateComparators(pos, this);
-            }
-            super.onStateReplaced(state, world, pos, moved);
-        }
-    }
-     */
 
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,

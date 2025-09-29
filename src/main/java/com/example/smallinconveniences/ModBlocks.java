@@ -73,16 +73,7 @@ public class ModBlocks {
                     .requiresTool()
                     .strength(5.0f, 6.0f),
             true);
-    /*
-    public static final Block STEEL_MILL = register(
-            "steel_mill",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .sounds(BlockSoundGroup.IRON)
-                    .requiresTool()
-                    .strength(6.0f, 7.0f),
-            true);
-    */
+
     public static final Block STEEL_MILL = register2("steel_mill",
             new SteelMillBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.IRON)
