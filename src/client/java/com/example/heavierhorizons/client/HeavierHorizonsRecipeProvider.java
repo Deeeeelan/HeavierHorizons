@@ -115,7 +115,7 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
                         .pattern("BLB")
                         .pattern("IBI")
                         .input('L', Items.LAVA_BUCKET)
-                        .input('I', Items.IRON_BLOCK)
+                        .input('I', Items.IRON_INGOT)
                         .input('B', Items.IRON_BLOCK)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                         .offerTo(exporter);
