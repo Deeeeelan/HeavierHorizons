@@ -78,7 +78,7 @@ public class ModBlocks {
             new SteelMillBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.IRON)
                     .requiresTool()
-                    .strength(6.0f, 7.0f)
+                    .strength(5.2f, 7.0f)
                     .registryKey(keyOfBlock("steel_mill"))
     ));
 }

@@ -110,7 +110,15 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
                         .offerTo(exporter);
 
-
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_MILL.asItem(), 1)
+                        .pattern("IBI")
+                        .pattern("BLB")
+                        .pattern("IBI")
+                        .input('L', Items.LAVA_BUCKET)
+                        .input('I', Items.IRON_BLOCK)
+                        .input('B', Items.IRON_BLOCK)
+                        .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                        .offerTo(exporter);
 
                 createShaped(RecipeCategory.COMBAT, ModItems.FORGE_PICKAXE, 1)
                         .pattern("SGS")
@@ -122,6 +130,7 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
                         .input('B', Items.STICK)
                         .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
                         .offerTo(exporter);
+
 
                 // RegistryWrapper.Impl<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
             }
