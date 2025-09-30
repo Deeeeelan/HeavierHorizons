@@ -5,6 +5,7 @@ import com.example.heavierhorizons.block.ModBlockEntities;
 import com.example.heavierhorizons.screen.ModScreenHandlers;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -20,12 +21,12 @@ public class HeavierHorizons implements ModInitializer {
     private static final Identifier ARMOR_SPEED_PENALTY_ID = Identifier.of(HeavierHorizons.MOD_ID, "armor_speed_penalty");
 
     public static final ToolMaterial STEEL_TOOL_MATERIAL = new ToolMaterial(
-            BlockTags.INCORRECT_FOR_WOODEN_TOOL,
+            BlockTags.INCORRECT_FOR_IRON_TOOL,
             455,
-            5.0F,
-            1.5F,
+            7.0F,
+            2.5F,
             16,
-            SteelArmorMaterial.REPAIRS_STEEL_ARMOR
+            ItemTags.IRON_TOOL_MATERIALS
     );
 
     @Override
