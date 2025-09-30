@@ -38,7 +38,6 @@ public class ModItems {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
             .register((itemGroup) -> {
-                itemGroup.add(ModItems.TEST_ITEM);
                 itemGroup.add(ModItems.STEEL_INGOT);
                 itemGroup.add(ModItems.COAL_DUST);
             });
@@ -61,8 +60,6 @@ public class ModItems {
                 });
 
     }
-
-    public static final Item TEST_ITEM = register("test_item", Item::new, new Item.Settings());
 
     public static final Item COAL_DUST = register("coal_dust", Item::new, new Item.Settings());
 
