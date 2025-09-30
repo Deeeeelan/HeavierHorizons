@@ -44,6 +44,7 @@ public class ModItems {
             });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> {
+                    itemGroup.add(ModItems.STEEL_SWORD);
                     itemGroup.add(ModItems.STEEL_HELMET);
                     itemGroup.add(ModItems.STEEL_CHESTPLATE);
                     itemGroup.add(ModItems.STEEL_LEGGINGS);
@@ -51,7 +52,11 @@ public class ModItems {
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
                 .register((itemGroup) -> {
-                    itemGroup.add(ModItems.STEEL_SWORD);
+                    itemGroup.add(ModItems.STEEL_PICKAXE);
+                    itemGroup.add(ModItems.STEEL_AXE);
+                    itemGroup.add(ModItems.STEEL_SHOVEL);
+                    itemGroup.add(ModItems.STEEL_HOE);
+
                     itemGroup.add(ModItems.FORGE_PICKAXE);
                 });
 
@@ -69,16 +74,46 @@ public class ModItems {
             "steel_sword",
             Item::new,
             new Item.Settings()
-                    .sword(STEEL_TOOL_MATERIAL, 10.5f, -2.8f)
+                    .sword(STEEL_TOOL_MATERIAL, 4, -2.4f)
                     .repairable(ModItems.STEEL_INGOT)
     );
+    public static final Item STEEL_PICKAXE = register(
+            "steel_pickaxe",
+            Item::new,
+            new Item.Settings()
+                    .pickaxe(STEEL_TOOL_MATERIAL, 2.0f, -2.8f)
+                    .repairable(ModItems.STEEL_INGOT)
+    );
+    public static final Item STEEL_AXE = register(
+            "steel_axe",
+            Item::new,
+            new Item.Settings()
+                    .axe(STEEL_TOOL_MATERIAL, 5.0f, -3.0f)
+                    .repairable(ModItems.STEEL_INGOT)
+    );
+    public static final Item STEEL_SHOVEL = register(
+            "steel_shovel",
+            Item::new,
+            new Item.Settings()
+                    .shovel(STEEL_TOOL_MATERIAL, 1.5f, -3f)
+                    .repairable(ModItems.STEEL_INGOT)
+    );
+    public static final Item STEEL_HOE = register(
+            "steel_hoe",
+            Item::new,
+            new Item.Settings()
+                    .hoe(STEEL_TOOL_MATERIAL, -3.0f, -0.0f)
+                    .repairable(ModItems.STEEL_INGOT)
+    );
+
     public static final Item FORGE_PICKAXE = register2(
             "forge_pickaxe",
             new ForgePickaxeItem(new Item.Settings()
-                    .pickaxe(ToolMaterial.IRON, 1, -2.8f)
+                    .pickaxe(ToolMaterial.IRON, 2, -2.8f)
                     .repairable(ModItems.STEEL_INGOT)
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(HeavierHorizons.MOD_ID, "forge_pickaxe")))
                     .enchantable(16)
+
             )
     );
 
