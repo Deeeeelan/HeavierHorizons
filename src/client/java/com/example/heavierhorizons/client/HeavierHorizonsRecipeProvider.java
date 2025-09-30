@@ -74,6 +74,44 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.COMBAT, ModItems.STEEL_PICKAXE, 1)
+                        .pattern("SSS")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('B', Items.STICK)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.STEEL_AXE, 1)
+                        .pattern("SS ")
+                        .pattern("SB ")
+                        .pattern(" B ")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('B', Items.STICK)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.STEEL_SHOVEL, 1)
+                        .pattern(" S ")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('B', Items.STICK)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.STEEL_HOE, 1)
+                        .pattern("SS ")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('B', Items.STICK)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
+
+
+
                 createShaped(RecipeCategory.COMBAT, ModItems.FORGE_PICKAXE, 1)
                         .pattern("SGS")
                         .pattern(" L ")

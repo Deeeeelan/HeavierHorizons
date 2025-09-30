@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:stick",
+    "S": "heavierhorizons:steel_ingot"
+  },
+  "pattern": [
+    "SS ",
+    " B ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "heavierhorizons:steel_hoe"
+  }
+}
