@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "heavierhorizons:block/steel_mill_up",
+    "down": "heavierhorizons:block/steel_mill_down",
+    "north": "heavierhorizons:block/steel_mill_north",
+    "east": "heavierhorizons:block/steel_mill_east",
+    "south": "heavierhorizons:block/steel_mill_south",
+    "west": "heavierhorizons:block/steel_mill_west",
+    "particle": "heavierhorizons:block/steel_mill_up"
+  }
+}

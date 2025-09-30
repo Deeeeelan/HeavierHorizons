@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:stick",
+    "G": "minecraft:furnace",
+    "L": "minecraft:lava_bucket",
+    "S": "heavierhorizons:steel_ingot"
+  },
+  "pattern": [
+    "SGS",
+    " L ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "heavierhorizons:forge_pickaxe"
+  }
+}

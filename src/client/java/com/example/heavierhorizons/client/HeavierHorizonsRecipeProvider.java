@@ -65,6 +65,25 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
                 createMonoItemRecipe(exporter, RecipeCategory.COMBAT, ModItems.STEEL_BOOTS, 1,
                         ModItems.STEEL_INGOT, new String[]{"S S", "S S"});
 
+                createShaped(RecipeCategory.COMBAT, ModItems.STEEL_SWORD, 1)
+                        .pattern(" S ")
+                        .pattern(" S ")
+                        .pattern(" B ")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('B', Items.STICK)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.FORGE_PICKAXE, 1)
+                        .pattern("SGS")
+                        .pattern(" L ")
+                        .pattern(" B ")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('G', Items.FURNACE)
+                        .input('L', Items.LAVA_BUCKET)
+                        .input('B', Items.STICK)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
 
                 // RegistryWrapper.Impl<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
             }
