@@ -131,6 +131,15 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.COMBAT, ModItems.STEEL_MAGNET, 1)
+                        .pattern("S S")
+                        .pattern("S S")
+                        .pattern("SRS")
+                        .input('S', ModItems.STEEL_INGOT)
+                        .input('R', Items.REDSTONE)
+                        .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                        .offerTo(exporter);
+
 
                 // RegistryWrapper.Impl<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
             }

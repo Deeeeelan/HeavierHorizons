@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": "minecraft:redstone",
+    "S": "heavierhorizons:steel_ingot"
+  },
+  "pattern": [
+    "S S",
+    "S S",
+    "SRS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "heavierhorizons:steel_magnet"
+  }
+}

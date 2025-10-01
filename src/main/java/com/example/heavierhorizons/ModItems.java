@@ -2,6 +2,7 @@ package com.example.heavierhorizons;
 
 import com.example.heavierhorizons.armor.SteelArmorMaterial;
 import com.example.heavierhorizons.item.ForgePickaxeItem;
+import com.example.heavierhorizons.item.SteelMagnetItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -57,6 +58,7 @@ public class ModItems {
                     itemGroup.add(ModItems.STEEL_HOE);
 
                     itemGroup.add(ModItems.FORGE_PICKAXE);
+                    itemGroup.add(ModItems.STEEL_MAGNET);
                 });
 
     }
@@ -66,7 +68,12 @@ public class ModItems {
     // Steel Set
     public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Settings());
 
-
+    public static final Item STEEL_MAGNET = register2(
+            "steel_magnet",
+            new SteelMagnetItem(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(HeavierHorizons.MOD_ID, "steel_magnet")))
+            )
+    );
     public static final Item STEEL_SWORD = register(
             "steel_sword",
             Item::new,
