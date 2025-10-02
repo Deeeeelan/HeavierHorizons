@@ -14,5 +14,6 @@
   "item.heavierhorizons.forge_pickaxe": "Forge Pickaxe",
   "item.heavierhorizons.steel_magnet": "Steel Magnet",
   "item.heavierhorizons.steel_mill": "Steel Mill",
-  "block.heavierhorizons.steel_mill": "Steel Mill"
+  "block.heavierhorizons.steel_mill": "Steel Mill",
+  "gamerule.armorWeight": "Armor Weight"
 }

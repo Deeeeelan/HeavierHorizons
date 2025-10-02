@@ -13,6 +13,8 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+import static com.example.heavierhorizons.ModGameRules.ARMOR_WEIGHT;
+
 public class HeavierHorizons implements ModInitializer {
 
     public static final String MOD_ID = "heavierhorizons";
@@ -34,16 +36,18 @@ public class HeavierHorizons implements ModInitializer {
         ModBlocks.initialize();
         ModBlockEntities.initialize();
         ModScreenHandlers.initialize();
+        ModGameRules.initialize();
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
+
+
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
 
                 // Decreases player speed based on armor
                 float speedDecrease = -(float) (player.getArmor() / 1000.0); // Base speed is 0.1, 20% decrease at max armor
                 if (speedDecrease < 0) {
                     EntityAttributeInstance playerSpeed = player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED);
-
-                    if (playerSpeed != null) {
+                    if (playerSpeed != null && server.getGameRules().getBoolean(ARMOR_WEIGHT)) {
                         if (playerSpeed.getModifier(ARMOR_SPEED_PENALTY_ID) != null) {
                             playerSpeed.removeModifier(ARMOR_SPEED_PENALTY_ID);
                         }
@@ -53,6 +57,10 @@ public class HeavierHorizons implements ModInitializer {
                                 EntityAttributeModifier.Operation.ADD_VALUE
                         );
                         playerSpeed.addPersistentModifier(speedModifier);
+                    } else {
+                        if (playerSpeed != null) {
+                            playerSpeed.removeModifier(ARMOR_SPEED_PENALTY_ID);
+                        }
                     }
                 }
             }
