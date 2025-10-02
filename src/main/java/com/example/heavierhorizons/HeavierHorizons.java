@@ -44,7 +44,8 @@ public class HeavierHorizons implements ModInitializer {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
 
                 // Decreases player speed based on armor
-                float speedDecrease = -(float) (player.getArmor() / 1000.0); // Base speed is 0.1, 20% decrease at max armor
+                // Speed modifier is clamped to -0.2 to 0.0
+                float speedDecrease = (float) Math.min(Math.max(-(player.getArmor() / 1000.0), -0.2), 0.0); // Base speed is 0.1, 20% decrease at max armor
                 if (speedDecrease < 0) {
                     EntityAttributeInstance playerSpeed = player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED);
                     if (playerSpeed != null && server.getGameRules().getBoolean(ARMOR_WEIGHT)) {
