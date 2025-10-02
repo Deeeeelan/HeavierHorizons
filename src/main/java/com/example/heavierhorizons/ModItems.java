@@ -71,6 +71,7 @@ public class ModItems {
     public static final Item STEEL_MAGNET = register2(
             "steel_magnet",
             new SteelMagnetItem(new Item.Settings()
+                    .maxCount(1)
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(HeavierHorizons.MOD_ID, "steel_magnet")))
             )
     );
