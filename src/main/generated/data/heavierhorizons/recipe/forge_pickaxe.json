@@ -4,12 +4,11 @@
   "key": {
     "B": "minecraft:stick",
     "G": "minecraft:furnace",
-    "L": "minecraft:lava_bucket",
     "S": "heavierhorizons:steel_ingot"
   },
   "pattern": [
     "SGS",
-    " L ",
+    " B ",
     " B "
   ],
   "result": {

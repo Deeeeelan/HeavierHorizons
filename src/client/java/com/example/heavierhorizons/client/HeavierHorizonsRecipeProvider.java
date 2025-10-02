@@ -122,11 +122,10 @@ public class HeavierHorizonsRecipeProvider extends FabricRecipeProvider {
 
                 createShaped(RecipeCategory.COMBAT, ModItems.FORGE_PICKAXE, 1)
                         .pattern("SGS")
-                        .pattern(" L ")
+                        .pattern(" B ")
                         .pattern(" B ")
                         .input('S', ModItems.STEEL_INGOT)
                         .input('G', Items.FURNACE)
-                        .input('L', Items.LAVA_BUCKET)
                         .input('B', Items.STICK)
                         .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
                         .offerTo(exporter);
