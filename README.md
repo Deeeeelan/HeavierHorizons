@@ -16,27 +16,25 @@ Heavier Horizons is a minecraft mod focused on implementing steel and other spec
     - Sfficency and durability balanced between iron and diamond tools.
 - Forge Pickaxe
     - 50% to drop a smelted item along with the block mined if the block is smeltable.
-- Armor weight
-    - Slightly slows down players wearing more armor.
-
-Recipe:
-
-![Forge Pickaxe crafting recipe](https://cdn.modrinth.com/data/cached_images/097ca5271022188a3c373f81ca40db3da7ee59fe.png)
-- Steel Mill
-    - Makes steel from iron, coal, and coal dust
-
-Recipe:
-
-![Steel Mill recipe](https://cdn.modrinth.com/data/cached_images/2806edd32b27305378f0e49abcb9e1a7a99e7e5f.png)
-
-Making Steel:
-
-![Making steel from a steel mill](https://cdn.modrinth.com/data/cached_images/3329d2eb6bf9aceab041394428ebc42978b1de8a.png)
-
 - Coal Dust
     - Used to make steel
+- Steel Mill
+    - Makes steel from iron, coal, and coal dust
+- Steel Magnet
+    - Picks up nearby objects in a 4x4x4 radius.
+- Armor weight gamerule
+    - Slightly slows down players wearing more armor.
 
-Recipe:
+Recipes:
 
 ![Coal Dust recipe](https://cdn.modrinth.com/data/cached_images/e656e495bfa463bf0e07d86ae15d00f0f4840f0e.png)
 
+![Forge Pickaxe crafting recipe](https://cdn.modrinth.com/data/cached_images/5f4907daa0a570e37c1724f2a6e1df69fe693703.png)
+
+![Steel Mill recipe](https://cdn.modrinth.com/data/cached_images/2806edd32b27305378f0e49abcb9e1a7a99e7e5f.png)
+
+![Steel Magnet Crafting Recipe](https://cdn.modrinth.com/data/cached_images/55212b801c09482f211d9af1bdf08728c3b0e2d2.png)
+
+Making Steel from a steel mill
+
+![Making steel from a steel mill](https://cdn.modrinth.com/data/cached_images/3329d2eb6bf9aceab041394428ebc42978b1de8a.png)
