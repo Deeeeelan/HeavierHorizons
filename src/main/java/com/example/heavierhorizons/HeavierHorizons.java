@@ -1,6 +1,5 @@
 package com.example.heavierhorizons;
 
-import com.example.heavierhorizons.armor.SteelArmorMaterial;
 import com.example.heavierhorizons.block.ModBlockEntities;
 import com.example.heavierhorizons.screen.ModScreenHandlers;
 import net.minecraft.item.ToolMaterial;
