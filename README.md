@@ -7,13 +7,17 @@ _Originally meant to be a mod that added gameplay tweaks, hence, the name "Small
 
 Heavier Horizons is a minecraft mod focused on implementing steel and other special tools.
 
+Steel is a new material in between iron and diamonds that requires a bit more work to get. You  make steel using a steel mill and input iron, coal, and coal dust. Steel armor has the same protection as diamond, at the cost of being significantly less durrable. Additionally, tools are efficent as iron tools, just having more durability. With steel, you can also craft a few more special items such as a steel magnet and a forge pickaxe to aid you in gameplay. Lastly, a global gamerule is implemented to enforce the "weight" of armor by slowing down players with more armor.
+
 **Featuring:**
 - Steel
     - Made from iron, coal dust, and coal from the steel mill.
+- Steel Blocks
+    - Crafted from 9 steel.
 - Steel Armor
     - Same armor as diamond, less durability.
 - Steel Tools
-    - Sfficency and durability balanced between iron and diamond tools.
+    - Efficiency and durability are balanced between iron and diamond tools.
 - Forge Pickaxe
     - 50% to drop a smelted item along with the block mined if the block is smeltable.
 - Coal Dust
@@ -25,7 +29,7 @@ Heavier Horizons is a minecraft mod focused on implementing steel and other spec
 - Armor weight gamerule
     - Slightly slows down players wearing more armor.
 
-Recipes:
+New Recipes:
 
 ![Coal Dust recipe](https://cdn.modrinth.com/data/cached_images/e656e495bfa463bf0e07d86ae15d00f0f4840f0e.png)
 
